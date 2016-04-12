@@ -1,6 +1,13 @@
 
 $bg_color:pink;
 $font-size:1em;
+$ancho:100%;
+
+@mixin media($queryString){
+  @media #{$queryString} {
+    @content;
+  }
+}
 
 header{
   background: $bg_color;
@@ -11,10 +18,56 @@ header{
     color: darken($bg_color,70);
     font-size: $font_size + .2;
   }
-  h2{
-    margin-top:20px;
-    color: darken($bg_color,50);
-    font-size: $font_size + .1;
+  ul{
+    margin-left:-40px;
+    li {
+      display: inline-block;
+      background: darken($bg_color, 20);
+      padding: 10px;
+      margin-left:20px;
+      border-radius: 5px;
+      text-align: center;
+
+      @include media("(min-width: 701px)"){
+        width: 50%;
+        width: $ancho / 8;
+        font-size: $font_size - .1em;
+      }
+
+      @include media("(min-width: 481px) and (max-width:700px)"){
+        width: 50%;
+        width: $ancho / 4;
+        font-size: $font_size - .2em;;
+      }
+
+      @include media("(max-width: 480px)"){
+        width: 50%;
+        width: $ancho / 2;
+        font-size: $font_size -.3em;
+        margin-top:20px;
+        margin-left:0;
+      }
+
+      &:first-child{
+        margin-left:0;
+      }
+
+      &:hover {
+        background: lighten($bg_color, 70);
+        padding: 10px;
+        box-shadow: 5px 5px 3px darken($bg_color, 80);
+        cursor: pointer;
+      }
+    }
+
+  }
+}
+input{
+  width:$ancho - 10;
+  margin-left:0px;
+  font-size:1.3em;
+  &:hover{
+    background: lightgoldenrodyellow;
 
   }
 }

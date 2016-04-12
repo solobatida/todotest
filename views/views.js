@@ -24,3 +24,4 @@ var view = {
         this.noteList.html( htmlStr );
     }
 };
+

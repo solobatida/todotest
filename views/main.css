@@ -5,9 +5,45 @@ header {
   header h1 {
     color: #5a0010;
     font-size: 1.2em; }
-  header h2 {
-    margin-top: 20px;
-    color: #c00022;
-    font-size: 1.1em; }
+  header ul {
+    margin-left: -40px; }
+    header ul li {
+      display: inline-block;
+      background: #ff5a77;
+      padding: 10px;
+      margin-left: 20px;
+      border-radius: 5px;
+      text-align: center; }
+      @media (min-width: 701px) {
+        header ul li {
+          width: 50%;
+          width: 12.5%;
+          font-size: 0.9em; } }
+      @media (min-width: 481px) and (max-width: 700px) {
+        header ul li {
+          width: 50%;
+          width: 25%;
+          font-size: 0.8em; } }
+      @media (max-width: 480px) {
+        header ul li {
+          width: 50%;
+          width: 50%;
+          font-size: 1em -0.3em;
+          margin-top: 20px;
+          margin-left: 0; } }
+      header ul li:first-child {
+        margin-left: 0; }
+      header ul li:hover {
+        background: white;
+        padding: 10px;
+        box-shadow: 5px 5px 3px #270007;
+        cursor: pointer; }
+
+input {
+  width: 90%;
+  margin-left: 0px;
+  font-size: 1.3em; }
+  input:hover {
+    background: lightgoldenrodyellow; }
 
 /*# sourceMappingURL=main.css.map */
