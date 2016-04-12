@@ -10,6 +10,12 @@ var itemController= {
         });
         view.render();
     },
+    
+    removeNote: function() {
+        console.log(JSON.stringify(this));
+;       itemModel.remove(this);
+        view.render();
+    },
 
     getNotes: function() {
         return itemModel.getAllNotes();
