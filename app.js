@@ -1,0 +1,4 @@
+$(function(){
+    
+    itemController.init();
+});
