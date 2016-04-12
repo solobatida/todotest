@@ -19,8 +19,14 @@ var view = {
             htmlStr += '<li class="note">'+
                 note.content + ' ' +
                 note.date +
+                '<span class="remove-btn"> X </span>' +
                 '</li>';
         });
         this.noteList.html( htmlStr );
+        $('.remove-btn').on('click', function(e){
+            e.preventDefault();
+            itemController.removeNote();
+            
+        });
     }
 };

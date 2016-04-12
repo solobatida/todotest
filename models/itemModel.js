@@ -13,6 +13,12 @@ var itemModel = {
         data.push(obj);
         localStorage.notes = JSON.stringify(data);
     },
+    
+    remove: function (obj) {
+        var data = JSON.parse(localStorage.notes);
+        data.pop(obj);
+        localStorage.notes = JSON.stringify(data);
+    },
 
     getAllNotes: function () {
         return JSON.parse(localStorage.notes);
