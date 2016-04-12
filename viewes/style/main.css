@@ -1,0 +1,13 @@
+header {
+  background: pink;
+  border-shadow: #ff274d;
+  padding: 10px; }
+  header h1 {
+    color: #5a0010;
+    font-size: 1.2em; }
+  header h2 {
+    margin-top: 20px;
+    color: #c00022;
+    font-size: 1.1em; }
+
+/*# sourceMappingURL=main.css.map */
