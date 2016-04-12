@@ -4,16 +4,21 @@
 
 var itemController= {
     addNewNote: function(noteStr) {
+
+        var thisID = ++itemModel.lastID;
+
         itemModel.add({
             content: noteStr,
-            date: Date.now()
+            date: Date.now(),
+            id: thisID
         });
         view.render();
     },
     
-    removeNote: function() {
-        
-;       itemModel.remove(this);
+    removeNote: function(obj) {
+        var clickedNote = itemModel.localStorage.notes[ obj.id - 1 ];
+        clickedNote.visible = false;
+       // itemModel.remove(this);
         view.render();
     },
 
