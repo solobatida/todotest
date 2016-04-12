@@ -12,7 +12,7 @@ var itemController= {
     },
     
     removeNote: function() {
-        console.log(JSON.stringify(this));
+        
 ;       itemModel.remove(this);
         view.render();
     },

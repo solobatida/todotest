@@ -18,6 +18,7 @@ var itemModel = {
         var data = JSON.parse(localStorage.notes);
         data.pop(obj);
         localStorage.notes = JSON.stringify(data);
+        console.log('obj' + JSON.stringify(obj));
     },
 
     getAllNotes: function () {

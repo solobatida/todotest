@@ -26,7 +26,7 @@ var view = {
         $('.remove-btn').on('click', function(e){
             e.preventDefault();
             itemController.removeNote();
-            
+            console.log(this);
         });
     }
 };
