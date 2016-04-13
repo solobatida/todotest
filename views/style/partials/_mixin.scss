@@ -1,0 +1,14 @@
+@mixin breakpoint($queryString){
+  @media #{$queryString} {
+    @content;
+  }
+}
+@mixin rounded($radius: 5px, $color: blue, $width: 2px, $style: dashed){
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-color: $color;
+  border-width: $width;
+  border-style: $style;
+
+}

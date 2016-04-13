@@ -1,0 +1,35 @@
+
+
+table{
+  margin-top:20px;
+  empty-cells: change_color(#102030, $blue: 5);
+  border-spacing: 10px;
+  border-collapse: separate;
+
+  td{
+    @include rounded(7px,brown,2px,solid);
+    padding: 5px;
+    border-spacing: 10px;
+    border-collapse: separate;
+    background: lawngreen;
+
+    &:first-child,
+    &:last-child{
+      background: red;
+    }
+
+
+
+    &:hover{
+      background: orange;
+      cursor:pointer;
+
+    }
+    &.active{
+      background: #000;
+      color:white;
+    }
+  }
+
+
+}
