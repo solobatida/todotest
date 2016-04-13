@@ -3,11 +3,23 @@ $bg_color:pink;
 $font-size:1em;
 $ancho:100%;
 
+$little_width: "(max-width: 420px)";
+$medium_width: "(min-width:421px) and (max-width: 700px)";
+$big_width: "(min-width: 701px)";
+
+
 @mixin media($queryString){
   @media #{$queryString} {
     @content;
   }
 }
+
+@mixin breakpoint($queryString){
+  @media #{$queryString} {
+    @content;
+  }
+}
+
 
 header{
   background: $bg_color;
@@ -17,6 +29,7 @@ header{
   h1{
     color: darken($bg_color,70);
     font-size: $font_size + .2;
+    font-family: "American Typewriter";
   }
   ul{
     margin-left:-40px;
@@ -28,26 +41,38 @@ header{
       border-radius: 5px;
       text-align: center;
 
-      @include media("(min-width: 701px)"){
-        width: 50%;
+      @include breakpoint($big_width) {
         width: $ancho / 8;
         font-size: $font_size - .1em;
       }
-
-      @include media("(min-width: 481px) and (max-width:700px)"){
-        width: 50%;
+      @include breakpoint($medium_width) {
         width: $ancho / 4;
-        font-size: $font_size - .2em;;
+        font-size: $font_size - .2em;
       }
-
-      @include media("(max-width: 480px)"){
-        width: 50%;
+      @include breakpoint($little_width) {
         width: $ancho / 2;
         font-size: $font_size -.3em;
         margin-top:20px;
         margin-left:0;
       }
+/*
+      @include media("(min-width: 701px)"){
+        width: $ancho / 8;
+        font-size: $font_size - .1em;
+      }
 
+      @include media("(min-width: 481px) and (max-width:700px)"){
+        width: $ancho / 4;
+        font-size: $font_size - .2em;
+      }
+
+      @include media("(max-width: 480px)"){
+        width: $ancho / 2;
+        font-size: $font_size -.3em;
+        margin-top:20px;
+        margin-left:0;
+      }
+*/
       &:first-child{
         margin-left:0;
       }
